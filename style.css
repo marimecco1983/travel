@@ -4,12 +4,17 @@
 
 body{
 	background: #9afaff;
-	padding:10%;
+	padding: 5%;
 	font-family: "Futura", Helvetica, sans-serif;
 }
 
-
-
+@media (max-width: 768px) {
+	body{
+	background: #9afaff;
+	padding: 10%;
+	font-family: "Futura", Helvetica, sans-serif;
+	}
+}
 /*-----------------
 外枠設定
 -----------------*/
@@ -62,9 +67,63 @@ h1,h2{
   font-family: "Dela Gothic One", sans-serif;
   font-weight: 400;
   font-style: normal;
-
-
+  scroll-margin-top: 80px; /* 固定ヘッダーの高さに応じて調整 */
 }
+
+/*-----------------
+表示分け
+-----------------*/
+.pcNone {
+	display:none !important;
+}
+.smNone {
+	display:block !important;
+}
+
+@media screen and (max-width:767px) {
+	.smNone {
+		display:none !important;
+	}
+	.pcNone {
+	display:block !important;
+	}
+}
+
+/*-----------------
+linkアイコン
+-----------------*/
+a.link:before
+{
+	box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #7a0;
+}
+a.link:after{
+	left: 3px;
+	width: 3px;
+	height: 3px;
+	border-top: 1px solid #7a0;
+	border-right: 1px solid #7a0;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+a.link｛
+	position: relative;
+ }
+
+/*-----------------
+米印、注釈
+-----------------*/
+.kome
+{
+	font-size:0.8rem;
+	 padding-left: 1em;
+  text-indent: -1em;
+}
+
+
+
 /*-----------------
 グローバルナビ
 -----------------*/
@@ -222,7 +281,13 @@ h1,h2{
   font-size: 20px;
 }
 
-
+/*-----------------
+リスト
+-----------------*/
+ul.list li a
+{
+	color:#333;	
+}
 
 
 /*-----------------
@@ -258,3 +323,16 @@ Flexbox
     flex: 1 1 100%;
 }
         }
+
+
+.item ul{
+	margin-left: -20px;
+}
+
+.item ul li{
+	padding-bottom: 10px;
+}
+
+.item ul li:last-child{
+	padding-bottom:0;
+}
